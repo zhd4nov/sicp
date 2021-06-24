@@ -26,3 +26,7 @@
 ; test examples from book
 
 (check-equal? (floor (sqrt 9)) 3.0)
+(check-equal? (floor (sqrt 121)) 11.0)
+; (check-equal? (floor (sqrt (- 9))) (- 3)) // -> infinite loop ? TODO: fix up... maybe 🤫
+(check-equal? (floor (sqrt 0)) 0.0)
+(check-not-equal? (floor (sqrt 64)) 999.0)
