@@ -1,29 +1,28 @@
 #lang sicp
 
-(#%require rackunit)
+(#%require rackunit "../../utils/utils.rkt")
 
-;check env
-(define (square x) (* x x))
+; just touch racket
+; Newton square roots finder by iterative guessing
 
-(define answer (square 2))
+(define (square-iter guess x)
+  (if (good-enough? guess x)
+      guess
+      (square-iter (improve guess x) x)))
 
-(check-equal? answer 4)
+(define (improve guess x)
+  (average guess (/ x guess)))
 
-(define (sum-of-square x y)
-  (+ (square x) (square y)))
 
-(check-equal? (sum-of-square 5 10) 125)
+(define (square x)
+  (* x x))
 
-(define (abs x)
-  (cond ((< x 0) (- x))
-        (else x)))
+(define (good-enough? guess x)
+  (< (abs (- (square guess) x)) 0.001))
 
-(check-equal? (abs -1) 1)
-(check-equal? (abs 1) 1)
-(check-equal? (abs 0) 0)
+(define (sqrt x)
+  (square-iter 1.0 x))
 
-(define (>= x y) (if (< x y) #f #t))
+; test examples from book
 
-(check-true (>= 2 0))
-(check-true (>= 0 0))
-(check-false (>= (- 2) 0))
+(check-equal? (floor (sqrt 9)) 3.0)

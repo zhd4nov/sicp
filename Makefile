@@ -3,7 +3,7 @@ install:
 	raco pkg install review
 
 test:
-	raco test chapters
+	raco test chapters utils
 
 lint:
 	@echo "check codestyle"
