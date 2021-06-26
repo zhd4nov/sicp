@@ -27,8 +27,8 @@
           guess
           (sqrt-iter (improve guess x) x)))
 
-(define (sqrt x)
-  (sqrt-iter 1.0 x))
+; (define (sqrt x)
+;   (sqrt-iter 1.0 x))
 
 ; native if is a special form but new-if is a primitive procedure.
 ; due to applicative order of evaluation interpreter will try to evaluate all of arguments at first

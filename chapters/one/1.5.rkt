@@ -6,10 +6,10 @@
 
 ; test is procedure that has 2 branches based on input x so we can choose if we evaluate the second branch.
 
-(define (test x y)
-  (if (= x 0)
-      0
-      y))
+; (define (test x y)
+;   (if (= x 0)
+;       0
+;       y))
 
 ; (test 0 (p))
 
