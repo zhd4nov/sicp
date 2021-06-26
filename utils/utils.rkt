@@ -1,6 +1,6 @@
 #lang sicp
 
-(#%provide square >= average abs sum-of-square)
+(#%provide square >= average abs sum-of-square сube)
 
 (define (square x) (* x x))
 
@@ -15,3 +15,5 @@
 
 (define (average x y)
   (/ (+ x y) 2.0))
+
+(define (сube x) (* x x x))

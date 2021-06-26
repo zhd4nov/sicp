@@ -13,20 +13,16 @@
 (define (improve guess x)
   (average guess (/ x guess)))
 
-
-(define (square x)
-  (* x x))
-
 (define (good-enough? guess x)
-  (< (abs (- (square guess) x)) 0.001))
+  (< (abs (- (square guess) x)) 0.0001))
 
 (define (sqrt x)
   (square-iter 1.0 x))
 
 ; test examples from book
 
-(check-equal? (floor (sqrt 9)) 3.0)
-(check-equal? (floor (sqrt 121)) 11.0)
+(check-equal? (floor (sqrt 9.0)) 3.0)
+(check-equal? (floor (sqrt 121.0)) 11.0)
 ; (check-equal? (floor (sqrt (- 9))) (- 3)) // -> infinite loop ? TODO: fix up... maybe 🤫
-(check-equal? (floor (sqrt 0)) 0.0)
-(check-not-equal? (floor (sqrt 64)) 999.0)
+(check-equal? (floor (sqrt 0.0)) 0.0)
+(check-not-equal? (floor (sqrt 64.0)) 999.0)

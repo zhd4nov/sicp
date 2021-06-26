@@ -1,5 +1,7 @@
 #lang sicp
 
+(#%provide improve)
+
 ; describe new-if problem
 
 (define (new-if predicate then-clause else-clause)
