@@ -18,3 +18,7 @@
 (check-true (>= 2 0))
 (check-true (>= 0 0))
 (check-false (>= (- 2) 0))
+
+; check is even
+(check-true (even? 16))
+(check-false (even? 15))

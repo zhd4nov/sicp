@@ -1,6 +1,6 @@
 #lang sicp
 
-(#%provide square >= average abs sum-of-square сube)
+(#%provide square >= average abs sum-of-square сube even? expt)
 
 (define (square x) (* x x))
 
@@ -17,3 +17,15 @@
   (/ (+ x y) 2.0))
 
 (define (сube x) (* x x x))
+
+(define (even? x)
+    (= (remainder x 2) 0))
+
+(define (expt b n)
+  (define (expt-iter b counter product)
+    (if (= counter 0)
+        product
+        (expt-iter b
+                   (- counter 1)
+                   (* b product))))
+  (expt-iter b n 1))
