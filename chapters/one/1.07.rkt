@@ -1,6 +1,6 @@
 #lang sicp
 
-(#%require rackunit "../../utils/utils.rkt" "1.6.rkt")
+(#%require rackunit "../../utils/utils.rkt" "1.06.rkt")
 
 (define (square-iter guess x)
   (if (good-enough? guess x)
